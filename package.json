@@ -1,0 +1,14 @@
+{
+    "name": "tilelive-file",
+    "version": "0.0.1",
+
+    "main": "./lib/tilelive-file.js",
+
+    "dependencies": {
+        "mkdirp": "~0.3.4"
+    },
+
+    "devDependencies": {
+        "mocha": "~1.4.0"
+    }
+}
