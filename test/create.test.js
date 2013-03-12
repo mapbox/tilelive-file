@@ -18,4 +18,17 @@ describe('creating a file-based tilesource', function() {
 
         });
     });
+
+    describe('in safe mode', function() {
+        it('should retrieve a tile correctly', function(done) {
+            new file('./test/fixtures/safe?safe=true', function(err, source) {
+                if (err) return done(err);
+                source.getTile(0, 0, 0, function(err, tile) {
+                    if (err) return done(err);
+                    assert.equal(md5(tile), 'e071213b7ca2f1c10ee8944300f461bd');
+                    done(null);
+                });
+            });
+        });
+    });
 });
