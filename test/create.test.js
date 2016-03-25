@@ -9,7 +9,7 @@ function md5(data) {
 
 describe('creating a file-based tilesource', function() {
     it('should retrieve a tile correctly', function(done) {
-        new file('./test/fixtures/readonly', function(err, source) {
+        new file('file://'+__dirname+'/fixtures/readonly', function(err, source) {
             if (err) return done(err);
             source.getTile(0, 0, 0, function(err, tile) {
                 if (err) return done(err);
